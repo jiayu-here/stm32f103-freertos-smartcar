@@ -1,0 +1,11 @@
+STM32F103 + FreeRTOS 智能小车增强版完整工程
+
+1. 先阅读 README.md 和 docs/01_硬件接线.md。
+2. 完整文档索引在 README.md，第一次使用按 docs/09_操作步骤_从零到运行.md。
+3. 固件已预编译：artifacts/C8 或 artifacts/RCT6。
+4. 自行编译：PowerShell 运行 scripts/build.ps1 -Device C8 -Clean。
+5. 连接 ST-Link 后烧录：scripts/flash.ps1 -Device C8。
+6. 串口/蓝牙：115200 8-N-1，运行 python scripts/car_console.py COM5。
+7. 首次上车必须架空车轮，校正电机方向、CPR、轮径、轮距和 PID。
+8. 参数调整后停车并发送 SAVE；CONFIG 可核对已保存序号。
+9. 交付环境没有连接实车；请按 docs/05_验收清单.md 完成实物验收。

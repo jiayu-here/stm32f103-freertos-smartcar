@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+*.bin binary
+*.elf binary
+*.hex text eol=lf
+*.map text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+
+# Upstream STM32Cube/FreeRTOS sources and generated linker maps retain their
+# original whitespace; do not flag it as a project formatting error.
+Drivers/** -whitespace
+Middlewares/** -whitespace
+startup/** -whitespace
+artifacts/**/*.map -whitespace
+STM32CubeF1_LICENSE.md -whitespace
