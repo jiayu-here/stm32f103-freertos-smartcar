@@ -1,6 +1,8 @@
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$build = Join-Path $root 'build/host-tests'
+# MinGW GCC can fail to create executables beneath non-ASCII project paths.
+# Keep generated host-test files in a stable ASCII-only temporary directory.
+$build = Join-Path $env:TEMP 'stm32f103_freertos_smartcar_host_tests'
 New-Item -ItemType Directory -Force -Path $build | Out-Null
 $compiler = Get-Command gcc -ErrorAction SilentlyContinue
 if ($compiler) {
